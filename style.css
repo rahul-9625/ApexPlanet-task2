@@ -1,0 +1,189 @@
+:root {
+  --primary: #0f766e;
+  --secondary: #14b8a6;
+  --bg-light: #f8fafc;
+  --bg-dark: #0f172a;
+  --card-light: #ffffff;
+  --card-dark: #1e293b;
+  --text-light: #1e293b;
+  --text-dark: #f1f5f9;
+  --error: #ef4444;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: var(--bg-light);
+  color: var(--text-light);
+  transition: 0.3s;
+}
+
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+}
+
+header button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Layout */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
+
+/* Card */
+.card {
+  background: var(--card-light);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+body.dark .card {
+  background: var(--card-dark);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Form */
+.form-control {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control label {
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.form-control input,
+.form-control textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(20,184,166,0.2);
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: var(--secondary);
+}
+
+.error {
+  color: var(--error);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Todo */
+.todo-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+}
+
+.todo-input button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+body.dark li {
+  background: #334155;
+}
+
+li.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.task-actions button {
+  margin-left: 5px;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Toast */
+#toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--primary);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+#toast.show {
+  opacity: 1;
+}
